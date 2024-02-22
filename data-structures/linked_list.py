@@ -33,6 +33,13 @@ class LinkedList:
             self.head = newNode
     # #Delets the first occurence of a node with the given value 
     # def delete(self, val):
+    #     if self.isEmpty():
+    #         return
+    #     else:
+    #         curr = self.head
+    #         while curr:
+    #             if val == self.head.val:
+    #                 self.head = self.head.next
         
     # #Deletes the node at the specified position
     # def deleteAtPosition(self, val):
@@ -41,24 +48,46 @@ class LinkedList:
     def get_length(self) -> int:
         return self.numNodes
     
-    # #Searches the list and returns a true if value exists, else returns false
-    # def search(self, val):
+    #Searches the list and returns a true if value exists, else returns false
+    def search(self, val) -> bool:
+        curr = self.head
+        
+        while curr:
+            if curr.val == val:
+                return True
+            curr = curr.next
+        return False
         
     # #Reverses the list, returns reversed list
-    # def reverse(self):
+    def reverse(self):
+        curr, prev = self.head, None
+        
+        while curr:
+            tmp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = prev
+        return prev
     
     # #Returns a boolean indicating if list is empty or not
-    # def isEmpty(self):
-    #     return self.numNodes == 0
+    def isEmpty(self):
+        return self.numNodes == 0
     
     # #Returns the value of nth node in list
-    # def getNthNode(self):
+    # def getNthNode(self, index):
     
     # #Returns the Nth Node from the End
     # def getNthFromEnd(self):
     
     # #Returns the middle node
-    # def getMiddleNode(self):
+    def getMiddleNode(self) -> int:
+        slow, fast = self.head, self.head
+        
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow.val
+        
     #Prints every value within the list
     def print(self) -> None:
         curr = self.head
