@@ -1,4 +1,4 @@
-def linearSearch(target, vals):
+def linearSearch(target, vals) -> bool:
     for i in range(len(vals)):
         if vals[i] == target:
             return True
