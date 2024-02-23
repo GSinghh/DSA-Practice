@@ -66,7 +66,7 @@ class LinkedList:
             tmp = curr.next
             curr.next = prev
             prev = curr
-            curr = prev
+            curr = tmp
         return prev
     
     # #Returns a boolean indicating if list is empty or not
