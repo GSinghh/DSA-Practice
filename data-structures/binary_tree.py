@@ -52,3 +52,45 @@ class BinaryTree:
         else:
             return False
         
+    # Find minimum value
+    
+    def min_value(self):
+        curr = self.root
+        
+        while curr.left is not None:
+            curr = curr.left
+        return curr.value
+    
+    # Find Maximum value
+    
+    def max_value(self):
+        curr = self.root
+        
+        while curr.right is not None:
+            curr = curr.right
+        return curr.value
+    
+    def preorder(self, node):
+        if node is not None:
+            return
+        print(node.value, end=" ")
+        self.preorder(node.left)
+        self.preorder(node.right)
+        
+    def inorder(self, node):
+        if node is not None:
+            return
+        self.inorder(node.left)
+        print(node.value, end=" ")
+        self.inorder(node.right)
+        
+    def postorder(self, node):
+        if node is not None:
+            return
+        self.postorder(node.left)
+        self.postorder(node.right)
+        print(node.value, end=" ")
+        
+        
+        
+        
