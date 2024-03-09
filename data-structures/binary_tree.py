@@ -70,6 +70,7 @@ class BinaryTree:
             curr = curr.right
         return curr.value
     
+    # Preorder traversal: Root -> Left -> Right
     def preorder(self, node):
         if node is not None:
             return
@@ -77,6 +78,7 @@ class BinaryTree:
         self.preorder(node.left)
         self.preorder(node.right)
         
+    # Inorder traversal: Left -> Root -> Right    
     def inorder(self, node):
         if node is not None:
             return
@@ -84,6 +86,7 @@ class BinaryTree:
         print(node.value, end=" ")
         self.inorder(node.right)
         
+    # Postorder traversal: Left -> Right -> Root
     def postorder(self, node):
         if node is not None:
             return
