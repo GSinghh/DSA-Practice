@@ -53,8 +53,7 @@ class BinaryTree:
             return False
         
     # Find minimum value
-    
-    def min_value(self):
+    def min_value(self) -> int:
         curr = self.root
         
         while curr.left is not None:
@@ -62,8 +61,7 @@ class BinaryTree:
         return curr.value
     
     # Find Maximum value
-    
-    def max_value(self):
+    def max_value(self) -> int:
         curr = self.root
         
         while curr.right is not None:
@@ -71,7 +69,7 @@ class BinaryTree:
         return curr.value
     
     # Preorder traversal: Root -> Left -> Right
-    def preorder(self, node):
+    def preorder(self, node) -> None:
         if node is not None:
             return
         print(node.value, end=" ")
@@ -79,7 +77,7 @@ class BinaryTree:
         self.preorder(node.right)
         
     # Inorder traversal: Left -> Root -> Right    
-    def inorder(self, node):
+    def inorder(self, node) -> None:
         if node is not None:
             return
         self.inorder(node.left)
@@ -87,7 +85,7 @@ class BinaryTree:
         self.inorder(node.right)
         
     # Postorder traversal: Left -> Right -> Root
-    def postorder(self, node):
+    def postorder(self, node) -> None:
         if node is not None:
             return
         self.postorder(node.left)
@@ -95,5 +93,55 @@ class BinaryTree:
         print(node.value, end=" ")
         
         
+    # Depth first search recursive implementation    
+    
+    def dfs_recursive(self, node):
+        if node:
+            print(node.value, end=" ")
+            self.dfs_recursive(node.left)
+            self.dfs_recursive(node.right)
+    
+    # Depth first search iterative implementation
+    
+    def dfs_iterative(self):
+        stack = [self.root]
+        while stack:
+            node = stack.pop()
+            if node:
+                print(node.value, end=" ")
+                stack.append(node.right)
+                stack.append(node.left)
+                
+    # Breadth first search iterative implementation
+    
+    def bfs_iterative(self):
+        queue = [self.root]
+        while queue:
+            node = queue.pop(0)
+            if node:
+                print(node.value, end=" ")
+                queue.append(node.left)
+                queue.append(node.right)
+                
+    #Breadth first search recursive implementation
+    
+    def bfs_recursive(self, queue):
+        queue = [self.root]
+        self._bfs_recursive(queue)
         
+    # Breadth first search recursive helper    
+    
+    def _bfs_recursive(self, queue):
+        if not queue:
+            return
         
+        node = queue.pop(0)
+        print(node.value, end=" ")
+        
+        if node.left:
+            queue.append(node.left)
+        if node.right: 
+            queue.append(node.right)
+        
+        self._bfs_recursive(queue)
+                
