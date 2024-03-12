@@ -25,3 +25,6 @@ class Stack:
     
     def print_stack(self):
         print(self.stack)
+        
+    def contains(self, item):
+        return item in self.stack
