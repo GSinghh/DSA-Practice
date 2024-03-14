@@ -6,6 +6,6 @@
 
 def slidingWindow(nums, k):
     for i in range(len(nums) - k + 1):
-        print(nums[i:i + k])
+        print("Window: ", nums[i:i + k])
         
 slidingWindow([1,2,3,4,5,6,7,8,9,10], 3)
