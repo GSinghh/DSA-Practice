@@ -7,11 +7,11 @@ class Set:
             self.container.append()
     
     def remove(self, val):
-        if val in self.container:
+        if self.contains(val):
             self.container.remove(val)
             
     def contains(self, val):
-        return val in self.container
+        return val in self.container if val else "Item not in set"
     
     def length(self):
         return len(self.container)
