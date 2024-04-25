@@ -1,3 +1,3 @@
 # Data Structures and Algorithms Practice
 
-#### These are some of algorithms used when practicing for leetcode and other technical questions
+#### Algorithms/Data Structures i found useful to know when studying leetcode/technical interviews
