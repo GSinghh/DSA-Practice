@@ -5,7 +5,7 @@ def word_search(board, word) -> bool:
     
     def dfs(row, col, word_index):
         """ 
-        Recursive Case 1, if the current index is equal to the length of the word we are looking for
+        Base Case 1, if the current index is equal to the length of the word we are looking for
         This means we have found the word within the board and we can return true
         """
         
@@ -13,7 +13,7 @@ def word_search(board, word) -> bool:
             return True
         
         """
-        Recursive Case 2, The current position cannot be out of bounds, this is done by checking 
+        Base Case 2, The current position cannot be out of bounds, this is done by checking 
         If our current row or col position is less than 0 meaning that it's less than the first
         index of the array, We also check if our current position is greater than or equal to the 
         right bound which is the last index in our array
